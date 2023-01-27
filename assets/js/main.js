@@ -22,4 +22,8 @@ $("searchBtn").on("click", function() {
 
   //clear input box
   $("#searchTerm").val("");
-};	
+
+  //url to call API
+  const queryUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + apiKey;
+  
+});	
