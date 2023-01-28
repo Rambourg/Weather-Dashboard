@@ -35,7 +35,8 @@ $("searchBtn").on("click", function() {
     console.log(response.weather[0].icon);
 
     let tempF = (response.main.temp -273.15) * 1.80 + 32;
-    console.log(Math.floor(tempF)))
+    console.log(Math.floor(tempF));
+    console.log(response.main.humidity);
     
   })
 
