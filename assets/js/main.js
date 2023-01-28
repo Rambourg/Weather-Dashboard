@@ -36,8 +36,22 @@ $("searchBtn").on("click", function() {
 
     let tempF = (response.main.temp -273.15) * 1.80 + 32;
     console.log(Math.floor(tempF));
+
     console.log(response.main.humidity);
+
+    console.log(response.wind.speed);
+
+    getCurrentConditions(response);
+    getCurrentForecast(response);
+    makeList();
+
+
     
   })
 
 });	
+
+function makeList() {
+  let listItem = $("<li>").addClass("list-group-item").text(city);
+  $(".list").append(listItem);
+}
