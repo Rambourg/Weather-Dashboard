@@ -54,10 +54,17 @@ $("searchBtn").on("click", function() {
 function makeList() {
   let listItem = $("<li>").addClass("list-group-item").text(city);
   $(".list").append(listItem);
+};
+function getCurrentConditions (response) {
+  let tempertureF = (response.main.temp -273.15) * 1.80 + 32,
+  temperatureF = Math.floor(tempF),
+
+  $("#currentCity").empty(),
 }
-function getCurrentConditions (response) [
-  let tempF = (response.main.temp -273.15) * 1.80 + 32;
-  tempF = Math.floor(tempF);
-  
-  $("#currentCity").empty();
-]
+
+//next lines is to set the content
+
+const card =$("<div>").addClass("card");
+const cardBody = $("<div>").addClass("cardBody");
+const cities = $("<div>").addClass("card-title").text(response.name);
+const cityDate = $("<h4>").addClass("card-title").text(date.toLocaleDateString("en-US"));
