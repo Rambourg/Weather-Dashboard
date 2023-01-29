@@ -81,3 +81,14 @@ card.append(cardBody);
 $("#currentCity").append(card);
 
 }
+
+function getCurrentForecast() {
+  $.ajax({
+    URL: "https://api.openweathermap.org/data/2.5/forecast?q=" + city + apiKey,
+    method: "GET"
+  }).then(function(response)){
+    console.log(response);
+    console.log(response.Date);
+    $("#forecast").empty();
+  }
+}
