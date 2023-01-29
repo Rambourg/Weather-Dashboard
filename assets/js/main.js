@@ -94,4 +94,13 @@ function getCurrentForecast() {
 }
 
 //creating a variable to hold response.list
-let results = response.list;
+let result = response.list;
+console.log(result);
+
+for (let i = 0; i < result.length; i++) {
+  let day = Number(result[i].date_txt.split("")[2].split("")[0]);
+  let hour = result[i].date_txt.split("")[2].split("")[1];
+  console.log(day);
+  console.log(hour):
+  
+}
