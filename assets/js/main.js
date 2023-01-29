@@ -92,3 +92,6 @@ function getCurrentForecast() {
     $("#forecast").empty();
   }
 }
+
+//creating a variable to hold response.list
+let results = response.list;
