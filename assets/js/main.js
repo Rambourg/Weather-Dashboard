@@ -50,17 +50,19 @@ $("searchBtn").on("click", function() {
   })
 
 });	
-
+//function to addClass to create a list item HTML
 function makeList() {
   let listItem = $("<li>").addClass("list-group-item").text(city);
   $(".list").append(listItem);
 };
+
+//TO GET THE CURRENT WEATHER CONDITIONS
 function getCurrentConditions (response) {
   let tempertureF = (response.main.temp -273.15) * 1.80 + 32,
   temperatureF = Math.floor(tempF),
 
   $("#currentCity").empty(),
-}
+};
 
 //next lines is to set the content
 
@@ -68,3 +70,14 @@ const card =$("<div>").addClass("card");
 const cardBody = $("<div>").addClass("cardBody");
 const cities = $("<div>").addClass("card-title").text(response.name);
 const cityDate = $("<h4>").addClass("card-title").text(date.toLocaleDateString("en-US"));
+const temperature = $("<p>").addClass("card-text current-temp").text("Temperature: " + tempF + "°F");
+const humidity = $("<p>").addClass("card-text current humidity").text("Humidity: " + response.main.humidity + "%");
+
+
+//to be added in the page append
+city.append(cityDate,Image);
+cardBody.append(city,temperature,humidity,wind);
+card.append(cardBody);
+$("#currentCity").append(card);
+
+}
