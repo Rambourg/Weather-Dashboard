@@ -59,16 +59,16 @@ function makeList() {
 //TO GET THE CURRENT WEATHER CONDITIONS
 function getCurrentConditions (response) {
   let tempertureF = (response.main.temp -273.15) * 1.80 + 32,
-  temperatureF = Math.floor(tempF),
+  temperatureF = Math.floor(tempF)
 
-  $("#currentCity").empty(),
+  $("#currentCity").empty()
 };
 
 //next lines is to set the content
 
 const card =$("<div>").addClass("card");
 const cardBody = $("<div>").addClass("cardBody");
-const cities = $("<div>").addClass("card-title").text(response.name);
+const cities = $("<div>").addClass("card-title").text("cities:" + response.name);
 const cityDate = $("<h4>").addClass("card-title").text(date.toLocaleDateString("en-US"));
 const temperature = $("<p>").addClass("card-text current-temp").text("Temperature: " + tempF + "°F");
 const humidity = $("<p>").addClass("card-text current humidity").text("Humidity: " + response.main.humidity + "%");
@@ -80,18 +80,18 @@ cardBody.append(city,temperature,humidity,wind);
 card.append(cardBody);
 $("#currentCity").append(card);
 
-}
+;
 
 function getCurrentForecast() {
   $.ajax({
     URL: "https://api.openweathermap.org/data/2.5/forecast?q=" + city + apiKey,
     method: "GET"
-  }).then(function(response)){
+  }).then(function(response) {
     console.log(response);
     console.log(response.Date);
-    $("#forecast").empty();
+    $("#forecast").empty()
   }
-}
+ ) }
 
 //creating a variable to hold response.list
 let result = response.list;
@@ -101,6 +101,6 @@ for (let i = 0; i < result.length; i++) {
   let day = Number(result[i].date_txt.split("")[2].split("")[0]);
   let hour = result[i].date_txt.split("")[2].split("")[1];
   console.log(day);
-  console.log(hour):
+  console.log(hour);
   
 }
